@@ -1,0 +1,243 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.toolbarGroup {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.searchResults {
+  max-height: 220px;
+  overflow: auto;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-subtle);
+}
+
+.viewport {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  outline: none;
+}
+
+.canvas {
+  position: relative;
+}
+
+.row {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: grid;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.row:hover {
+  background: var(--bg-hover);
+}
+
+.rowSelected {
+  background: var(--accent-soft);
+}
+
+.rowParent {
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+
+.rowCompareBase {
+  background: color-mix(in srgb, var(--merge) 14%, transparent);
+}
+
+.rowDimmed > *:not(svg) {
+  opacity: 0.35;
+}
+
+.rowDimmed svg {
+  opacity: 0.3;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  padding-left: 6px;
+  overflow: hidden;
+}
+
+.subject {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 8px;
+  color: var(--text-muted);
+}
+
+.hash {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 0 8px;
+}
+
+.refBadge {
+  flex: none;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 7px;
+  border-radius: 4px;
+  font-size: 11px;
+  line-height: 18px;
+  border: 1px solid;
+  background: var(--bg-elevated);
+}
+
+.refLocal {
+  color: #fff;
+  border-color: transparent;
+}
+
+.refRemote {
+  background: transparent;
+}
+
+.refTag {
+  border-style: dashed;
+  background: transparent;
+}
+
+.refHead {
+  flex: none;
+  padding: 0 7px;
+  border-radius: 4px;
+  font-size: 11px;
+  line-height: 18px;
+  font-weight: 700;
+  background: var(--text);
+  color: var(--bg);
+}
+
+.moreRefs {
+  flex: none;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: grid;
+  align-items: center;
+  height: 26px;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.legend {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-subtle);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 8px 18px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.legendItem svg {
+  flex: none;
+  margin-top: 1px;
+}
+
+.loadMore {
+  padding: 12px;
+  text-align: center;
+}
+
+.explanation {
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+}
+
+/* Two-branch comparison: a stripe on the left edge marks which branch's history a commit is in. */
+.wrapper {
+  --compare-a: #4c8dff;
+  --compare-b: #e86ab8;
+}
+
+.sideA {
+  box-shadow: inset 4px 0 0 var(--compare-a);
+}
+
+.sideB {
+  box-shadow: inset 4px 0 0 var(--compare-b);
+}
+
+.sideBoth {
+  box-shadow: inset 4px 0 0 var(--text-muted);
+}
+
+.comparisonBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-subtle);
+}
+
+.compareKeyA,
+.compareKeyB {
+  display: inline-block;
+  min-width: 18px;
+  margin-left: 6px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+}
+
+.compareKeyA {
+  background: var(--compare-a);
+}
+
+.compareKeyB {
+  background: var(--compare-b);
+}
